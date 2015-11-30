@@ -1,0 +1,26 @@
+{
+  "name": "jsAngular",
+  "homepage": "https://github.com/NULL-OPERATOR/jsAngular",
+  "authors": [
+    "NULL-OPERATOR <x@cryptolab.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-resource": "~1.4.8"
+  }
+}
