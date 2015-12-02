@@ -3,7 +3,7 @@ describe('GitUserSearchController', function() {
 
   var ctrl;
 
-  beforeEach(inject(function($controller) {
+  beforeEach(inject(function($controller){
     ctrl = $controller('GitUserSearchController');
   }));
 
@@ -13,34 +13,15 @@ describe('GitUserSearchController', function() {
   });
 
   describe('when searching for a user', function() {
-    var httpBackend;
-    beforeEach(inject(function($httpBackend) {
-      httpBackend = $httpBackend;
-      httpBackend
-        // .expectGET("https://api.github.com/search/users?q=hello&access_token=58bd3e6b3cd74bd6725c5e6702fa3843bf9907fe")
-        .expectGET("https://api.github.com/search/users?q=hello")
-        .respond(
-          { items: items }
-      );
-    }));
+
+    // var httpBackend;
+    beforeEach(inject(stubGET));
 
     afterEach(function() {
       httpBackend.verifyNoOutstandingExpectation();
       httpBackend.verifyNoOutstandingRequest();
-     });
+    });
 
-    var items = [
-      {
-        "login": "tansaku",
-        "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-        "html_url": "https://github.com/tansaku"
-      },
-      {
-        "login": "stephenlloyd",
-        "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-        "html_url": "https://github.com/stephenlloyd"
-      }
-    ];
 
     it('displays search results', function() {
       ctrl.searchTerm = 'hello';
@@ -48,6 +29,7 @@ describe('GitUserSearchController', function() {
       httpBackend.flush();
       expect(ctrl.searchResult.items).toEqual(items);
     });
+
   });
 
 });

@@ -20,12 +20,16 @@ module.exports = function(config) {
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'js/**/*.js',
+      'test/test_helper.spec.js',
       'test/**/*.spec.js'
+
     ],
 
 
     // list of files to exclude
-    exclude: [],
+    exclude: [
+
+    ],
 
 
     // preprocess matching files before serving them to the browser
@@ -36,9 +40,8 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
-
+    reporters: ['progress', 'spec'],
+    specReporter: { suppressPassed: true },
     // web server port
     port: 9876,
 
