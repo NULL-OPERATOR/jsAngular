@@ -1,1 +1,1 @@
-var git_token = "06ff8cced0b02e05d5b63c1e62b1829cb60286e2"
+var git_token = "3df256b991d92a93bc73af49795b93aff6f577a6"
