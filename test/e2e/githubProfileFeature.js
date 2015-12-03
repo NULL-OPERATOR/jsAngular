@@ -13,7 +13,7 @@ describe('GitHub profile finder', function() {
 
   it('finds profiles', function() {
     searchBox.sendKeys("NULL-OPERATOR")
-    // searchButton.click
+    // var profiles = element.all(by.repeater('user in  searchResult.items'));
     expect(element(by.binding('user.login')).getText()).toEqual('NULL-OPERATOR');
   });
 
